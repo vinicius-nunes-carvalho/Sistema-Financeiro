@@ -22,149 +22,149 @@ Partial Class frmMenu
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.lbl_categoria = New System.Windows.Forms.Label()
+        Me.cmb_categoria = New System.Windows.Forms.ComboBox()
+        Me.cmb_pagamento = New System.Windows.Forms.ComboBox()
+        Me.lbl_pagamento = New System.Windows.Forms.Label()
+        Me.lbl_compra = New System.Windows.Forms.Label()
+        Me.txt_compra = New System.Windows.Forms.TextBox()
+        Me.txt_valor = New System.Windows.Forms.TextBox()
+        Me.lbl_valor = New System.Windows.Forms.Label()
+        Me.lbl_data = New System.Windows.Forms.Label()
+        Me.dtp_data = New System.Windows.Forms.DateTimePicker()
+        Me.btn_apagar = New System.Windows.Forms.Button()
+        Me.btn_gravar = New System.Windows.Forms.Button()
+        Me.btn_sair = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Label1
+        'lbl_categoria
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(26, 32)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(57, 18)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Label1"
+        Me.lbl_categoria.AutoSize = True
+        Me.lbl_categoria.Location = New System.Drawing.Point(26, 32)
+        Me.lbl_categoria.Name = "lbl_categoria"
+        Me.lbl_categoria.Size = New System.Drawing.Size(88, 18)
+        Me.lbl_categoria.TabIndex = 0
+        Me.lbl_categoria.Text = "Categoria:"
         '
-        'ComboBox1
+        'cmb_categoria
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(29, 53)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(270, 26)
-        Me.ComboBox1.TabIndex = 1
+        Me.cmb_categoria.FormattingEnabled = True
+        Me.cmb_categoria.Location = New System.Drawing.Point(29, 53)
+        Me.cmb_categoria.Name = "cmb_categoria"
+        Me.cmb_categoria.Size = New System.Drawing.Size(270, 26)
+        Me.cmb_categoria.TabIndex = 1
         '
-        'ComboBox2
+        'cmb_pagamento
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(29, 113)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(270, 26)
-        Me.ComboBox2.TabIndex = 3
+        Me.cmb_pagamento.FormattingEnabled = True
+        Me.cmb_pagamento.Location = New System.Drawing.Point(29, 113)
+        Me.cmb_pagamento.Name = "cmb_pagamento"
+        Me.cmb_pagamento.Size = New System.Drawing.Size(270, 26)
+        Me.cmb_pagamento.TabIndex = 3
         '
-        'Label2
+        'lbl_pagamento
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(26, 92)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 18)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Label2"
+        Me.lbl_pagamento.AutoSize = True
+        Me.lbl_pagamento.Location = New System.Drawing.Point(26, 92)
+        Me.lbl_pagamento.Name = "lbl_pagamento"
+        Me.lbl_pagamento.Size = New System.Drawing.Size(96, 18)
+        Me.lbl_pagamento.TabIndex = 2
+        Me.lbl_pagamento.Text = "Forma pgt:"
         '
-        'Label3
+        'lbl_compra
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(26, 154)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 18)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Label3"
+        Me.lbl_compra.AutoSize = True
+        Me.lbl_compra.Location = New System.Drawing.Point(26, 154)
+        Me.lbl_compra.Name = "lbl_compra"
+        Me.lbl_compra.Size = New System.Drawing.Size(151, 18)
+        Me.lbl_compra.TabIndex = 4
+        Me.lbl_compra.Text = "Produto / Serviço:"
         '
-        'TextBox1
+        'txt_compra
         '
-        Me.TextBox1.Location = New System.Drawing.Point(29, 175)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(270, 25)
-        Me.TextBox1.TabIndex = 5
+        Me.txt_compra.Location = New System.Drawing.Point(29, 175)
+        Me.txt_compra.Name = "txt_compra"
+        Me.txt_compra.Size = New System.Drawing.Size(270, 25)
+        Me.txt_compra.TabIndex = 5
         '
-        'TextBox2
+        'txt_valor
         '
-        Me.TextBox2.Location = New System.Drawing.Point(29, 238)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(124, 25)
-        Me.TextBox2.TabIndex = 7
+        Me.txt_valor.Location = New System.Drawing.Point(29, 238)
+        Me.txt_valor.Name = "txt_valor"
+        Me.txt_valor.Size = New System.Drawing.Size(124, 25)
+        Me.txt_valor.TabIndex = 7
         '
-        'Label4
+        'lbl_valor
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(26, 217)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(62, 18)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Label4"
+        Me.lbl_valor.AutoSize = True
+        Me.lbl_valor.Location = New System.Drawing.Point(26, 217)
+        Me.lbl_valor.Name = "lbl_valor"
+        Me.lbl_valor.Size = New System.Drawing.Size(53, 18)
+        Me.lbl_valor.TabIndex = 6
+        Me.lbl_valor.Text = "Valor:"
         '
-        'Label5
+        'lbl_data
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(172, 217)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(61, 18)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Label5"
+        Me.lbl_data.AutoSize = True
+        Me.lbl_data.Location = New System.Drawing.Point(172, 217)
+        Me.lbl_data.Name = "lbl_data"
+        Me.lbl_data.Size = New System.Drawing.Size(49, 18)
+        Me.lbl_data.TabIndex = 9
+        Me.lbl_data.Text = "Data:"
         '
-        'DateTimePicker1
+        'dtp_data
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(175, 238)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(124, 25)
-        Me.DateTimePicker1.TabIndex = 10
+        Me.dtp_data.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp_data.Location = New System.Drawing.Point(175, 238)
+        Me.dtp_data.Name = "dtp_data"
+        Me.dtp_data.Size = New System.Drawing.Size(124, 25)
+        Me.dtp_data.TabIndex = 10
         '
-        'Button1
+        'btn_apagar
         '
-        Me.Button1.Location = New System.Drawing.Point(175, 288)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(124, 30)
-        Me.Button1.TabIndex = 11
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_apagar.Location = New System.Drawing.Point(175, 288)
+        Me.btn_apagar.Name = "btn_apagar"
+        Me.btn_apagar.Size = New System.Drawing.Size(124, 30)
+        Me.btn_apagar.TabIndex = 11
+        Me.btn_apagar.Text = "Apagar"
+        Me.btn_apagar.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btn_gravar
         '
-        Me.Button2.Location = New System.Drawing.Point(29, 288)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(124, 30)
-        Me.Button2.TabIndex = 12
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btn_gravar.Location = New System.Drawing.Point(29, 288)
+        Me.btn_gravar.Name = "btn_gravar"
+        Me.btn_gravar.Size = New System.Drawing.Size(124, 30)
+        Me.btn_gravar.TabIndex = 12
+        Me.btn_gravar.Text = "Gravar"
+        Me.btn_gravar.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btn_sair
         '
-        Me.Button3.Location = New System.Drawing.Point(29, 358)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(124, 30)
-        Me.Button3.TabIndex = 13
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btn_sair.Location = New System.Drawing.Point(29, 358)
+        Me.btn_sair.Name = "btn_sair"
+        Me.btn_sair.Size = New System.Drawing.Size(124, 30)
+        Me.btn_sair.TabIndex = 13
+        Me.btn_sair.Text = "Sair"
+        Me.btn_sair.UseVisualStyleBackColor = True
         '
         'frmMenu
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(800, 410)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btn_sair)
+        Me.Controls.Add(Me.btn_gravar)
+        Me.Controls.Add(Me.btn_apagar)
+        Me.Controls.Add(Me.dtp_data)
+        Me.Controls.Add(Me.lbl_data)
+        Me.Controls.Add(Me.txt_valor)
+        Me.Controls.Add(Me.lbl_valor)
+        Me.Controls.Add(Me.txt_compra)
+        Me.Controls.Add(Me.lbl_compra)
+        Me.Controls.Add(Me.cmb_pagamento)
+        Me.Controls.Add(Me.lbl_pagamento)
+        Me.Controls.Add(Me.cmb_categoria)
+        Me.Controls.Add(Me.lbl_categoria)
         Me.Font = New System.Drawing.Font("Gotham", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
@@ -176,17 +176,17 @@ Partial Class frmMenu
 
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents lbl_categoria As Label
+    Friend WithEvents cmb_categoria As ComboBox
+    Friend WithEvents cmb_pagamento As ComboBox
+    Friend WithEvents lbl_pagamento As Label
+    Friend WithEvents lbl_compra As Label
+    Friend WithEvents txt_compra As TextBox
+    Friend WithEvents txt_valor As TextBox
+    Friend WithEvents lbl_valor As Label
+    Friend WithEvents lbl_data As Label
+    Friend WithEvents dtp_data As DateTimePicker
+    Friend WithEvents btn_apagar As Button
+    Friend WithEvents btn_gravar As Button
+    Friend WithEvents btn_sair As Button
 End Class
