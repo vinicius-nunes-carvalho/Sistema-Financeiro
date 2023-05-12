@@ -1,3 +1,0 @@
-﻿Module ModuloP
-
-End Module
