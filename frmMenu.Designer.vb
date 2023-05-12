@@ -22,6 +22,7 @@ Partial Class frmMenu
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lbl_categoria = New System.Windows.Forms.Label()
         Me.cmb_categoria = New System.Windows.Forms.ComboBox()
         Me.cmb_pagamento = New System.Windows.Forms.ComboBox()
@@ -35,6 +36,7 @@ Partial Class frmMenu
         Me.btn_apagar = New System.Windows.Forms.Button()
         Me.btn_gravar = New System.Windows.Forms.Button()
         Me.btn_sair = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'lbl_categoria
@@ -189,4 +191,5 @@ Partial Class frmMenu
     Friend WithEvents btn_apagar As Button
     Friend WithEvents btn_gravar As Button
     Friend WithEvents btn_sair As Button
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
