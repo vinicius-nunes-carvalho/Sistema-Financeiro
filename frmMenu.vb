@@ -7,9 +7,9 @@
                  txt_valor.Text = "" Or
                  Not dtp_data.Checked Then
             MsgBox("Complete todos os campos para realizar alguma ação.", MessageBoxIcon.Warning, "Aviso!")
-            Return False
-        Else
             Return True
+        Else
+            Return False
         End If
     End Function
 
@@ -31,6 +31,12 @@
     Private Sub btn_gravar_Click(sender As Object, e As EventArgs) Handles btn_gravar.Click
         If validar() = False Then
             PopUpCentro("Os dados foram gravados!")
+        End If
+    End Sub
+
+    Private Sub btn_apagar_Click(sender As Object, e As EventArgs) Handles btn_apagar.Click
+        If validar() = False Then
+            PopUpCentro("Os dados foram apagados!")
         End If
     End Sub
 End Class
