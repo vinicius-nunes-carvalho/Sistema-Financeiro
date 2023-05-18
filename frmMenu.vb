@@ -28,22 +28,29 @@ Public Class frmMenu
             numeroMes = InputBox("Digite o mês desejado - formato númeral")
             Dim numero As Integer
 
-            If Integer.TryParse(numeroMes, numero) Then
-                Try
-                    Dim query As String = "SELECT * FROM dadosgastos WHERE EXTRACT(MONTH FROM data_compra) = " & numeroMes
-                    Dim dataAdapter As New NpgsqlDataAdapter(query, connection)
-                    Dim dataTable As New DataTable()
+            If numeroMes = "" Then
+                Exit Sub
+            ElseIf Integer.TryParse(numeroMes, numero) Then
+                If numeroMes > 12 Or numeroMes < 1 Then
+                    MsgBox("Digite um mês entre 1 e 12!")
+                    result = False
+                Else
+                    Try
+                        Dim query As String = "SELECT * FROM dadosgastos WHERE EXTRACT(MONTH FROM data_compra) = " & numeroMes
+                        Dim dataAdapter As New NpgsqlDataAdapter(query, connection)
+                        Dim dataTable As New DataTable()
 
-                    'Preenche o dadaTable com a função Fill
-                    dataAdapter.Fill(dataTable)
+                        'Preenche o dadaTable com a função Fill
+                        dataAdapter.Fill(dataTable)
 
-                    'Insere os dados no DataGrid
-                    dgvDados.DataSource = dataTable
-                    result = True
-                Catch
-                    MsgBox("Erro ao carregar dados do DataGrid - Filtro Mês")
-                    result = True
-                End Try
+                        'Insere os dados no DataGrid
+                        dgvDados.DataSource = dataTable
+                        result = True
+                    Catch
+                        MsgBox("Erro ao carregar dados do DataGrid - Filtro Mês")
+                        result = True
+                    End Try
+                End If
             Else
                 MsgBox("Dentro desse campo só podem ser digitados números!", MsgBoxStyle.Critical, "Aviso!")
             End If
