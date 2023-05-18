@@ -41,6 +41,7 @@ Partial Class frmMenu
         Me.ToolMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.FiltrosToolMes = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvDados = New System.Windows.Forms.DataGridView()
+        Me.ColunaApagar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvDados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -185,10 +186,17 @@ Partial Class frmMenu
         '
         Me.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvDados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColunaApagar})
         Me.dgvDados.Location = New System.Drawing.Point(339, 53)
         Me.dgvDados.Name = "dgvDados"
         Me.dgvDados.Size = New System.Drawing.Size(425, 335)
         Me.dgvDados.TabIndex = 16
+        '
+        'ColunaApagar
+        '
+        Me.ColunaApagar.HeaderText = "Apagar"
+        Me.ColunaApagar.Name = "ColunaApagar"
+        Me.ColunaApagar.Width = 73
         '
         'frmMenu
         '
@@ -243,4 +251,5 @@ Partial Class frmMenu
     Friend WithEvents ToolMenu As ToolStripMenuItem
     Friend WithEvents FiltrosToolMes As ToolStripMenuItem
     Friend WithEvents dgvDados As DataGridView
+    Friend WithEvents ColunaApagar As DataGridViewImageColumn
 End Class

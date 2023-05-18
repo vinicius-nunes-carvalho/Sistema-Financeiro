@@ -133,4 +133,9 @@ Public Class frmMenu
             e.Handled = True
         End If
     End Sub
+
+    Private Sub dgvDados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDados.CellContentClick
+        MessageBox.Show("Gostaria de realmente apagar o registro?",
+                        "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+    End Sub
 End Class
