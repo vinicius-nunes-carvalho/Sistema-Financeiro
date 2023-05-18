@@ -23,9 +23,6 @@ Partial Class frmMenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lbl_categoria = New System.Windows.Forms.Label()
         Me.cmb_categoria = New System.Windows.Forms.ComboBox()
         Me.cmb_pagamento = New System.Windows.Forms.ComboBox()
@@ -40,12 +37,12 @@ Partial Class frmMenu
         Me.btn_gravar = New System.Windows.Forms.Button()
         Me.btn_sair = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.dgvDados = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.FiltrosToolMes = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.dgvDados, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dgvDados = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.dgvDados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_categoria
@@ -60,6 +57,7 @@ Partial Class frmMenu
         'cmb_categoria
         '
         Me.cmb_categoria.FormattingEnabled = True
+        Me.cmb_categoria.Items.AddRange(New Object() {"Pessoais", "Alimentação", "Trabalho", "Lazer"})
         Me.cmb_categoria.Location = New System.Drawing.Point(29, 53)
         Me.cmb_categoria.Name = "cmb_categoria"
         Me.cmb_categoria.Size = New System.Drawing.Size(270, 26)
@@ -68,6 +66,7 @@ Partial Class frmMenu
         'cmb_pagamento
         '
         Me.cmb_pagamento.FormattingEnabled = True
+        Me.cmb_pagamento.Items.AddRange(New Object() {"Itaú", "Nubank", "American", "Dinheiro"})
         Me.cmb_pagamento.Location = New System.Drawing.Point(29, 113)
         Me.cmb_pagamento.Name = "cmb_pagamento"
         Me.cmb_pagamento.Size = New System.Drawing.Size(270, 26)
@@ -158,35 +157,6 @@ Partial Class frmMenu
         Me.btn_sair.Text = "Sair"
         Me.btn_sair.UseVisualStyleBackColor = True
         '
-        'dgvDados
-        '
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Gotham", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvDados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dgvDados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.dgvDados.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Gotham", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvDados.DefaultCellStyle = DataGridViewCellStyle5
-        Me.dgvDados.Location = New System.Drawing.Point(327, 53)
-        Me.dgvDados.Name = "dgvDados"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Gotham", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvDados.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
-        Me.dgvDados.Size = New System.Drawing.Size(441, 286)
-        Me.dgvDados.TabIndex = 14
-        '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -208,8 +178,17 @@ Partial Class frmMenu
         'FiltrosToolMes
         '
         Me.FiltrosToolMes.Name = "FiltrosToolMes"
-        Me.FiltrosToolMes.Size = New System.Drawing.Size(180, 22)
+        Me.FiltrosToolMes.Size = New System.Drawing.Size(107, 22)
         Me.FiltrosToolMes.Text = "Mês"
+        '
+        'dgvDados
+        '
+        Me.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvDados.Location = New System.Drawing.Point(339, 53)
+        Me.dgvDados.Name = "dgvDados"
+        Me.dgvDados.Size = New System.Drawing.Size(425, 335)
+        Me.dgvDados.TabIndex = 16
         '
         'frmMenu
         '
@@ -238,9 +217,9 @@ Partial Class frmMenu
         Me.MinimizeBox = False
         Me.Name = "frmMenu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        CType(Me.dgvDados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.dgvDados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -260,8 +239,8 @@ Partial Class frmMenu
     Friend WithEvents btn_gravar As Button
     Friend WithEvents btn_sair As Button
     Friend WithEvents ToolTip1 As ToolTip
-    Friend WithEvents dgvDados As DataGridView
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ToolMenu As ToolStripMenuItem
     Friend WithEvents FiltrosToolMes As ToolStripMenuItem
+    Friend WithEvents dgvDados As DataGridView
 End Class
