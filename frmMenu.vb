@@ -1,4 +1,25 @@
-﻿Public Class frmMenu
+﻿Imports System.IO
+Imports Npgsql
+
+Public Class frmMenu
+    Public Sub CarregarDados()
+
+        Try
+            'Query ao banco para buscar todos os valores da tabela
+            Dim query As String = "SELECT * FROM dadosgastos"
+
+            Dim dataAdapter As New NpgsqlDataAdapter(query, connection)
+            Dim dataTable As New DataTable()
+
+            'Preenche o dadaTable com a função Fill
+            dataAdapter.Fill(dataTable)
+
+            'Insere os dados no DataGrid
+            dgvDados.DataSource = dataTable
+        Catch
+            MsgBox("Erro ao carregar dados do DataGrid")
+        End Try
+    End Sub
 
     Public Function validar() As Boolean
         If cmb_categoria.SelectedIndex = -1 Or
@@ -26,6 +47,7 @@
 
     Private Sub frmMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConectarBanco()
+        CarregarDados()
     End Sub
 
     Private Sub btn_gravar_Click(sender As Object, e As EventArgs) Handles btn_gravar.Click
