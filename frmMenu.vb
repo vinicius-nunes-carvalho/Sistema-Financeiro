@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Security.Cryptography.X509Certificates
 Imports Npgsql
 
 Public Class frmMenu
@@ -20,7 +21,24 @@ Public Class frmMenu
             MsgBox("Erro ao carregar dados do DataGrid")
         End Try
     End Sub
+    Public Sub FiltroMes()
+        Dim numeroMes As String
+        numeroMes = InputBox("Digite o mês desejado - formato 00")
 
+        Try
+            Dim query As String = "SELECT * FROM dadosgastos WHERE EXTRACT(MONTH FROM data_compra) = " & numeroMes
+            Dim dataAdapter As New NpgsqlDataAdapter(query, connection)
+            Dim dataTable As New DataTable()
+
+            'Preenche o dadaTable com a função Fill
+            dataAdapter.Fill(dataTable)
+
+            'Insere os dados no DataGrid
+            dgvDados.DataSource = dataTable
+        Catch
+            MsgBox("Erro ao carregar dados do DataGrid - Filtro Mês")
+        End Try
+    End Sub
     Public Function validar() As Boolean
         If cmb_categoria.SelectedIndex = -1 Or
                  cmb_pagamento.SelectedIndex = -1 Or
@@ -60,5 +78,13 @@ Public Class frmMenu
         If validar() = False Then
             PopUpCentro("Os dados foram apagados!")
         End If
+    End Sub
+
+    Private Sub btnPesquisar_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub MêsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FiltrosToolMes.Click
+        FiltroMes()
     End Sub
 End Class
