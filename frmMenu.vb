@@ -25,7 +25,7 @@
     End Sub
 
     Private Sub frmMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        ConectarBanco()
     End Sub
 
     Private Sub btn_gravar_Click(sender As Object, e As EventArgs) Handles btn_gravar.Click
