@@ -22,22 +22,32 @@ Public Class frmMenu
         End Try
     End Sub
     Public Sub FiltroMes()
-        Dim numeroMes As String
-        numeroMes = InputBox("Digite o mês desejado - formato 00")
+        Dim result As Boolean
+        Do While result = False
+            Dim numeroMes As String
+            numeroMes = InputBox("Digite o mês desejado - formato númeral")
+            Dim numero As Integer
 
-        Try
-            Dim query As String = "SELECT * FROM dadosgastos WHERE EXTRACT(MONTH FROM data_compra) = " & numeroMes
-            Dim dataAdapter As New NpgsqlDataAdapter(query, connection)
-            Dim dataTable As New DataTable()
+            If Integer.TryParse(numeroMes, numero) Then
+                Try
+                    Dim query As String = "SELECT * FROM dadosgastos WHERE EXTRACT(MONTH FROM data_compra) = " & numeroMes
+                    Dim dataAdapter As New NpgsqlDataAdapter(query, connection)
+                    Dim dataTable As New DataTable()
 
-            'Preenche o dadaTable com a função Fill
-            dataAdapter.Fill(dataTable)
+                    'Preenche o dadaTable com a função Fill
+                    dataAdapter.Fill(dataTable)
 
-            'Insere os dados no DataGrid
-            dgvDados.DataSource = dataTable
-        Catch
-            MsgBox("Erro ao carregar dados do DataGrid - Filtro Mês")
-        End Try
+                    'Insere os dados no DataGrid
+                    dgvDados.DataSource = dataTable
+                    result = True
+                Catch
+                    MsgBox("Erro ao carregar dados do DataGrid - Filtro Mês")
+                    result = True
+                End Try
+            Else
+                MsgBox("Dentro desse campo só podem ser digitados números!", MsgBoxStyle.Critical, "Aviso!")
+            End If
+        Loop
     End Sub
     Public Function validar() As Boolean
         If cmb_categoria.SelectedIndex = -1 Or
