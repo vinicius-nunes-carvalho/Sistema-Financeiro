@@ -140,7 +140,7 @@ Public Class frmMenu
 
         If resp = vbYes Then
             ' Verifica se o clique ocorreu em uma célula válida (ignora o cabeçalho)
-            If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
+            If e.RowIndex > 0 AndAlso e.ColumnIndex > 0 Then
                 ' Obtém a linha clicada
                 Dim row As DataGridViewRow = dgvDados.Rows(e.RowIndex)
                 ' Obtém os valores das células da linha clicada
