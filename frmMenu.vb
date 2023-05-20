@@ -56,6 +56,32 @@ Public Class frmMenu
             End If
         Loop
     End Sub
+
+    Public Sub filtroCategoria()
+        Dim CategoriaEscolhida As String
+        CategoriaEscolhida = cmb_categoria.SelectedItem
+
+
+        If CategoriaEscolhida = "" Then
+            Exit Sub
+        Else
+            Try
+                Dim query As String = "SELECT * From dadosgastos Where categoria = @Categoria"
+                Dim dataAdapter As New NpgsqlDataAdapter(query, connection)
+
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@Categoria", CategoriaEscolhida)
+                Dim dataTable As New DataTable()
+
+                'Preenche o dadaTable com a função Fill
+                dataAdapter.Fill(dataTable)
+
+                'Insere os dados no DataGrid
+                dgvDados.DataSource = dataTable
+            Catch
+                MsgBox("Erro ao carregar dados do DataGrid - Filtro Categoria")
+            End Try
+        End If
+    End Sub
     Public Function validar() As Boolean
         If cmb_categoria.SelectedIndex = -1 Or
                  cmb_pagamento.SelectedIndex = -1 Or
@@ -69,6 +95,13 @@ Public Class frmMenu
         End If
     End Function
 
+    Public Sub limparCampos()
+        cmb_categoria.SelectedIndex = -1
+        cmb_pagamento.SelectedIndex = -1
+        txt_compra.Text = ""
+        txt_valor.Text = ""
+        dtp_data.Value = Today
+    End Sub
     Public Function gravar() As Boolean
         If validar() = False Then
             Return False
@@ -114,10 +147,12 @@ Public Class frmMenu
     End Sub
 
     Private Sub btn_gravar_Click(sender As Object, e As EventArgs) Handles btn_gravar.Click
-        gravar()
+        If gravar() Then
+            limparCampos
+        End If
     End Sub
 
-    Private Sub btn_apagar_Click(sender As Object, e As EventArgs) 
+    Private Sub btn_apagar_Click(sender As Object, e As EventArgs)
         If validar() = False Then
             PopUpCentro("Os dados foram apagados!")
         End If
@@ -165,5 +200,17 @@ Public Class frmMenu
                 CarregarDados()
             End If
         End If
+    End Sub
+
+    Private Sub FormaPagamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FormaPagamentoToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub CategotiaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CategotiaToolStripMenuItem.Click
+        filtroCategoria()
+    End Sub
+
+    Private Sub btnFiltroCat_Click(sender As Object, e As EventArgs) Handles btnFiltroCat.Click
+        filtroCategoria()
     End Sub
 End Class
