@@ -170,43 +170,47 @@ Public Class frmMenu
     End Sub
 
     Private Sub dgvDados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDados.CellContentClick
-        Dim resp = MessageBox.Show("Gostaria de realmente apagar o registro?",
-                        "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-        If resp = vbYes Then
+        ' Obtém a linha clicada
+        Dim row As DataGridViewRow = dgvDados.Rows(e.RowIndex)
+        If row.Cells("Categoria").Value.ToString = "" Then
+            MsgBox("A linha selecionada já está vazia!", MsgBoxStyle.Information, "Aviso")
+            Exit Sub
+        Else
             ' Verifica se o clique ocorreu em uma célula válida (ignora o cabeçalho)
-            If e.RowIndex > 0 AndAlso e.ColumnIndex > 0 Then
-                ' Obtém a linha clicada
-                Dim row As DataGridViewRow = dgvDados.Rows(e.RowIndex)
-                ' Obtém os valores das células da linha clicada
-                Dim categoria As String = row.Cells("Categoria").Value.ToString()
-                Dim pagamento As String = row.Cells("Pagamento").Value.ToString()
-                Dim produto As String = row.Cells("Produto").Value.ToString()
-                Dim valor As Decimal = Convert.ToDecimal(row.Cells("Valor").Value)
-                Dim data As DateTime = Convert.ToDateTime(row.Cells("data_compra").Value)
+            If e.RowIndex >= 0 And e.ColumnIndex = 0 Then
+                Dim resp = MessageBox.Show("Gostaria de realmente apagar o registro?",
+                            "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                If resp = vbYes Then
+                    ' Obtém os valores das células da linha clicada
+                    Dim categoria As String = row.Cells("Categoria").Value.ToString()
+                    Dim pagamento As String = row.Cells("Pagamento").Value.ToString()
+                    Dim produto As String = row.Cells("Produto").Value.ToString()
+                    Dim valor As Decimal = Convert.ToDecimal(row.Cells("Valor").Value)
+                    Dim data As DateTime = Convert.ToDateTime(row.Cells("data_compra").Value)
 
-                Dim query As String = "DELETE FROM dadosgastos WHERE categoria = @cat AND pagamento = @pag AND produto = @prod AND valor = @valor AND data_compra = @data"
-                Dim command As New NpgsqlCommand(query, connection)
+                    Dim query As String = "DELETE FROM dadosgastos WHERE categoria = @cat AND pagamento = @pag AND produto = @prod AND valor = @valor AND data_compra = @data"
+                    Dim command As New NpgsqlCommand(query, connection)
 
-                ' Parâmetros da query
-                command.Parameters.AddWithValue("@cat", categoria)
-                command.Parameters.AddWithValue("@pag", pagamento)
-                command.Parameters.AddWithValue("@prod", produto)
-                command.Parameters.AddWithValue("@valor", valor)
-                command.Parameters.AddWithValue("@data", data)
+                    ' Parâmetros da query
+                    command.Parameters.AddWithValue("@cat", categoria)
+                    command.Parameters.AddWithValue("@pag", pagamento)
+                    command.Parameters.AddWithValue("@prod", produto)
+                    command.Parameters.AddWithValue("@valor", valor)
+                    command.Parameters.AddWithValue("@data", data)
 
-                ' Executar a query no banco
-                command.ExecuteNonQuery()
-                CarregarDados()
+                    ' Executar a query no banco
+                    command.ExecuteNonQuery()
+                    CarregarDados()
+                End If
             End If
         End If
     End Sub
 
-    Private Sub FormaPagamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FormaPagamentoToolStripMenuItem.Click
+    Private Sub FormaPagamentoToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub CategotiaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CategotiaToolStripMenuItem.Click
+    Private Sub CategotiaToolStripMenuItem_Click(sender As Object, e As EventArgs)
         filtroCategoria()
     End Sub
 

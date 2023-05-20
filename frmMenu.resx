@@ -126,4 +126,20 @@
   <metadata name="ColunaApagar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="ColunaApagar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnFiltroCat.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAARsAAAEbAY33TuUAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABKUlEQVQ4T53TTUtCURDG8YtEq6KFCBbULgQXueqDVLvcuEtaRFCIFkH0AkH2QlAUKEQU9C1P/+dw
+        lKerXNCBH9LMmenc65iFECYQJbTQxSMG6KGDyr+z/kdMZFkNL/jAOY7Qxhn6eMfe+HyueQ0/0H9t4ga6
+        xTEu0qduMR6SH/Ca1LHjtVTfxC5OoSEVL27jFw1vmoZYxD06njxB3w8WIfRoPU9cKumHihD7ePNEnOiH
+        ihAHuPPEIQZ+qAihveh6ooxPNP3gNMQ6tCetfOEaQ2x43hEL0J5o2UpeqOIJX9CQiZsQDWhPvlGLuVRQ
+        8wNWoCG6iR5n9BvQC9Yaa0+esWpDY7OWYhkaUk0FvRO9WDXrK9Yab40afYCeZwkaEptnobjC7TzNIYTs
+        Dwn31k88p8SyAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

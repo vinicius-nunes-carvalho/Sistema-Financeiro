@@ -23,6 +23,7 @@ Partial Class frmMenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
         Me.lbl_categoria = New System.Windows.Forms.Label()
         Me.cmb_categoria = New System.Windows.Forms.ComboBox()
         Me.cmb_pagamento = New System.Windows.Forms.ComboBox()
@@ -41,9 +42,6 @@ Partial Class frmMenu
         Me.FiltrosToolMes = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvDados = New System.Windows.Forms.DataGridView()
         Me.ColunaApagar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.CategotiaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FormaPagamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProdutoServioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnFiltroCat = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvDados, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -164,7 +162,7 @@ Partial Class frmMenu
         '
         'ToolMenu
         '
-        Me.ToolMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CategotiaToolStripMenuItem, Me.FormaPagamentoToolStripMenuItem, Me.ProdutoServioToolStripMenuItem, Me.FiltrosToolMes})
+        Me.ToolMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FiltrosToolMes})
         Me.ToolMenu.Font = New System.Drawing.Font("Gotham", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolMenu.Name = "ToolMenu"
         Me.ToolMenu.Size = New System.Drawing.Size(69, 22)
@@ -192,31 +190,13 @@ Partial Class frmMenu
         Me.ColunaApagar.Name = "ColunaApagar"
         Me.ColunaApagar.Width = 73
         '
-        'CategotiaToolStripMenuItem
-        '
-        Me.CategotiaToolStripMenuItem.Name = "CategotiaToolStripMenuItem"
-        Me.CategotiaToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
-        Me.CategotiaToolStripMenuItem.Text = "Categoria"
-        '
-        'FormaPagamentoToolStripMenuItem
-        '
-        Me.FormaPagamentoToolStripMenuItem.Name = "FormaPagamentoToolStripMenuItem"
-        Me.FormaPagamentoToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
-        Me.FormaPagamentoToolStripMenuItem.Text = "Forma Pagamento"
-        '
-        'ProdutoServioToolStripMenuItem
-        '
-        Me.ProdutoServioToolStripMenuItem.Name = "ProdutoServioToolStripMenuItem"
-        Me.ProdutoServioToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
-        Me.ProdutoServioToolStripMenuItem.Text = "Produto / Serviço"
-        '
         'btnFiltroCat
         '
-        Me.btnFiltroCat.Location = New System.Drawing.Point(305, 55)
+        Me.btnFiltroCat.Image = CType(resources.GetObject("btnFiltroCat.Image"), System.Drawing.Image)
+        Me.btnFiltroCat.Location = New System.Drawing.Point(305, 53)
         Me.btnFiltroCat.Name = "btnFiltroCat"
-        Me.btnFiltroCat.Size = New System.Drawing.Size(22, 24)
+        Me.btnFiltroCat.Size = New System.Drawing.Size(28, 26)
         Me.btnFiltroCat.TabIndex = 17
-        Me.btnFiltroCat.Text = "F"
         Me.btnFiltroCat.UseVisualStyleBackColor = True
         '
         'frmMenu
@@ -272,8 +252,5 @@ Partial Class frmMenu
     Friend WithEvents FiltrosToolMes As ToolStripMenuItem
     Friend WithEvents dgvDados As DataGridView
     Friend WithEvents ColunaApagar As DataGridViewImageColumn
-    Friend WithEvents CategotiaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents FormaPagamentoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ProdutoServioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnFiltroCat As Button
 End Class
