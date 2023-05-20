@@ -117,7 +117,7 @@ Public Class frmMenu
         gravar()
     End Sub
 
-    Private Sub btn_apagar_Click(sender As Object, e As EventArgs) Handles btn_apagar.Click
+    Private Sub btn_apagar_Click(sender As Object, e As EventArgs) 
         If validar() = False Then
             PopUpCentro("Os dados foram apagados!")
         End If

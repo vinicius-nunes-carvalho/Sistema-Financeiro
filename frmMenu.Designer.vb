@@ -33,7 +33,6 @@ Partial Class frmMenu
         Me.lbl_valor = New System.Windows.Forms.Label()
         Me.lbl_data = New System.Windows.Forms.Label()
         Me.dtp_data = New System.Windows.Forms.DateTimePicker()
-        Me.btn_apagar = New System.Windows.Forms.Button()
         Me.btn_gravar = New System.Windows.Forms.Button()
         Me.btn_sair = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -131,15 +130,6 @@ Partial Class frmMenu
         Me.dtp_data.Size = New System.Drawing.Size(124, 25)
         Me.dtp_data.TabIndex = 10
         '
-        'btn_apagar
-        '
-        Me.btn_apagar.Location = New System.Drawing.Point(175, 288)
-        Me.btn_apagar.Name = "btn_apagar"
-        Me.btn_apagar.Size = New System.Drawing.Size(124, 30)
-        Me.btn_apagar.TabIndex = 11
-        Me.btn_apagar.Text = "Apagar"
-        Me.btn_apagar.UseVisualStyleBackColor = True
-        '
         'btn_gravar
         '
         Me.btn_gravar.Location = New System.Drawing.Point(29, 288)
@@ -206,7 +196,6 @@ Partial Class frmMenu
         Me.Controls.Add(Me.dgvDados)
         Me.Controls.Add(Me.btn_sair)
         Me.Controls.Add(Me.btn_gravar)
-        Me.Controls.Add(Me.btn_apagar)
         Me.Controls.Add(Me.dtp_data)
         Me.Controls.Add(Me.lbl_data)
         Me.Controls.Add(Me.txt_valor)
@@ -243,7 +232,6 @@ Partial Class frmMenu
     Friend WithEvents lbl_valor As Label
     Friend WithEvents lbl_data As Label
     Friend WithEvents dtp_data As DateTimePicker
-    Friend WithEvents btn_apagar As Button
     Friend WithEvents btn_gravar As Button
     Friend WithEvents btn_sair As Button
     Friend WithEvents ToolTip1 As ToolTip
